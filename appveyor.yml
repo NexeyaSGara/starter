@@ -171,18 +171,18 @@ after_build:
   - cmd: cpack -G NSIS
   - cmd: cpack -G ZIP
   #rename 
-  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.exe starter_6.2_v90_x32.exe
-  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.zip starter_6.2_v90_x32.zip
-  - cmd: if %ARCH%==x64-msvc9 move starter-..-x64.exe starter_6.2_v90_x64.exe
-  - cmd: if %ARCH%==x64-msvc9 move starter-..-x64.zip starter_6.2_v90_x64.zip
-  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.exe starter_6.2_v100_x32.exe
-  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.zip starter_6.2_v100_x32.zip
-  - cmd: if %ARCH%==x64-msvc10 move starter-..-x64.exe starter_6.2_v100_x64.exe
-  - cmd: if %ARCH%==x64-msvc10 move starter-..-x64.zip starter_6.2_v100_x64.zip
-  - cmd: if %ARCH%==x64-msvc12 move starter-..-x64.exe starter_6.2_v120_x64.exe
-  - cmd: if %ARCH%==x64-msvc12 move starter-..-x64.zip starter_6.2_v120_x64.zip
-  - cmd: if %ARCH%==x64-msvc14 move starter-..-x64.exe starter_6.2_v140_x64.exe
-  - cmd: if %ARCH%==x64-msvc14 move starter-..-x64.zip starter_6.2_v140_x64.zip
+  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.exe starter_6.2_v90_x86.exe
+  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.zip starter_6.2_v90_x86.zip
+  - cmd: if %ARCH%==x64-msvc9 move starter-..-win64.exe starter_6.2_v90_x64.exe
+  - cmd: if %ARCH%==x64-msvc9 move starter-..-win64.zip starter_6.2_v90_x64.zip
+  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.exe starter_6.2_v100_x86.exe
+  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.zip starter_6.2_v100_x86.zip
+  - cmd: if %ARCH%==x64-msvc10 move starter-..-win64.exe starter_6.2_v100_x64.exe
+  - cmd: if %ARCH%==x64-msvc10 move starter-..-win64.zip starter_6.2_v100_x64.zip
+  - cmd: if %ARCH%==x64-msvc12 move starter-..-win64.exe starter_6.2_v120_x64.exe
+  - cmd: if %ARCH%==x64-msvc12 move starter-..-win64.zip starter_6.2_v120_x64.zip
+  - cmd: if %ARCH%==x64-msvc14 move starter-..-win64.exe starter_6.2_v140_x64.exe
+  - cmd: if %ARCH%==x64-msvc14 move starter-..-win64.zip starter_6.2_v140_x64.zip
 
 on_finish:
   #RDP for finish
