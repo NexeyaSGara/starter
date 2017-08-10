@@ -80,7 +80,10 @@ set(SERVER_NAME Starter)
 if(WIN32)
 add_executable(Starter ${SERVER_SRC})
 target_link_libraries(Starter PUBLIC ${TANGO_LIBS} ${WIN_LIBS} ${ZMQ_LIB})
-install(TARGETS Starter)
+install(TARGETS Starter 
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION bin
+        ARCHIVE DESTINATION bin)
 else(WIN32)
 include(${MAKE_ENV}/cmake_common_target.opt)
 endif(WIN32)
