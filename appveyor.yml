@@ -170,13 +170,23 @@ after_build:
   # Generating installer
   - cmd: cpack -G NSIS
   - cmd: cpack -G ZIP
-  #rename x64-msvc10
-  - cmd: if %ARCH%==x64-msvc10 move starter_9.2.5_Windows7.1SDK_x64.exe starter_9.2.5_v100_x64.exe
-  - cmd: if %ARCH%==x64-msvc10 move starter_9.2.5_Windows7.1SDK_x64.zip starter_9.2.5_v100_x64.zip
+  #rename 
+  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.exe starter_6.2_v90_x32.exe
+  - cmd: if %ARCH%==x32-msvc9 move starter-..-win32.zip starter_6.2_v90_x32.zip
+  - cmd: if %ARCH%==x64-msvc9 move starter-..-x64.exe starter_6.2_v90_x64.exe
+  - cmd: if %ARCH%==x64-msvc9 move starter-..-x64.zip starter_6.2_v90_x64.zip
+  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.exe starter_6.2_v100_x32.exe
+  - cmd: if %ARCH%==x32-msvc10 move starter-..-win32.zip starter_6.2_v100_x32.zip
+  - cmd: if %ARCH%==x64-msvc10 move starter-..-x64.exe starter_6.2_v100_x64.exe
+  - cmd: if %ARCH%==x64-msvc10 move starter-..-x64.zip starter_6.2_v100_x64.zip
+  - cmd: if %ARCH%==x64-msvc12 move starter-..-x64.exe starter_6.2_v120_x64.exe
+  - cmd: if %ARCH%==x64-msvc12 move starter-..-x64.zip starter_6.2_v120_x64.zip
+  - cmd: if %ARCH%==x64-msvc14 move starter-..-x64.exe starter_6.2_v140_x64.exe
+  - cmd: if %ARCH%==x64-msvc14 move starter-..-x64.zip starter_6.2_v140_x64.zip
 
 on_finish:
   #RDP for finish
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 artifacts:
   - path: ./*.exe
