@@ -38,7 +38,12 @@ set(CXXFLAGS_USER -g)
 #
 # Get global information
 #
+if(WIN32)
+include(CmakeTangoWin.cmake)
+else(win32)
 include(${MAKE_ENV}/cmake_tango.opt)
+endif(WIN32)
+
 
 #
 # Files for Starter TANGO class
@@ -62,10 +67,18 @@ set(USER_SRC_FILES )
 set(ALL_CLASS_INCLUDE  ${STARTER_INCLUDE}  ${USER_INCL_DIR})
 set(SERVER_SRC ${STARTER_SRC}  ${USER_SRC_FILES} ClassFactory.cpp main.cpp)
 include_directories(${ALL_CLASS_INCLUDE}  ${USER_INCL_DIR} ${TANGO_INCLUDES})
+if(WIN32)
+link_directories(${TANGO_LNK_DIR})
+endif(WIN32)
 
 #
 # Device Server generation
 #
 set(SERVER_NAME Starter)
+if(WIN32)
+add_executable(Starter ${SERVER_SRC})
+target_link_libraries(Starter PUBLIC ${TANGO_LIBS} ${WIN_LIBS} ${ZMQ_LIB})
+else(WIN32)
 include(${MAKE_ENV}/cmake_common_target.opt)
+endif(WIN32)
 
