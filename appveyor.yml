@@ -163,7 +163,7 @@ build:
   
 build_script:
   - cmd: cd C:/projects/starter 
-  - cmake --build ./ --config Release
+  - cmake --build ./ --config Release -- /p:CharacterSet=NotSet
 
 after_build:
   - cmd: cd C:/projects/starter 
