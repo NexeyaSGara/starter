@@ -40,6 +40,7 @@ set(CXXFLAGS_USER -g)
 #
 if(WIN32)
 include(CmakeTangoWin.cmake)
+add_definitions(-D_MBCS)
 else(win32)
 include(${MAKE_ENV}/cmake_tango.opt)
 endif(WIN32)
