@@ -146,7 +146,7 @@ install:
   - cmd: echo "Platform='%Platform%'"
   - cmd: set PYTHONPATH=%PYTHONPATH%
   # Tango Server
-  - cmd: cd "C:\projects\TangoTest"
+  - cmd: cd "C:\projects\starter"
   - cmd: if %ARCH%==win32-msvc9 set TANGO_ROOT=C:/projects/libtango/libtango_9.2.5_v90_x86/
   - cmd: if %ARCH%==x64-msvc9 set TANGO_ROOT=C:/projects/libtango/libtango_9.2.5_v90_x64/
   - cmd: if %ARCH%==win32-msvc10 set TANGO_ROOT=C:/projects/libtango/libtango_9.2.5_v100_x86/
@@ -162,7 +162,7 @@ build:
   verbosity: minimal
   
 build_script:
-  - cmd: cd C:/projects/TangoTest 
+  - cmd: cd C:/projects/starter 
   - cmake --build ./ --config Release
 
 after_build:
