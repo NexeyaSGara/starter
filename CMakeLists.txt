@@ -79,8 +79,14 @@ endif(WIN32)
 set(SERVER_NAME Starter)
 if(WIN32)
 add_executable(Starter ${SERVER_SRC})
-target_link_libraries(Starter PUBLIC ${TANGO_LIBS} ${WIN_LIBS} ${ZMQ_LIB})
+target_link_libraries(Starter PUBLIC ${TANGO_DYN_LIBS} ${WIN_LIBS} ${ZMQ_LIB_DYN})
 install(TARGETS Starter 
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION bin
+        ARCHIVE DESTINATION bin)
+add_executable(Starter_sta ${SERVER_SRC})
+target_link_libraries(Starter PUBLIC ${TANGO_STA_LIBS} ${WIN_LIBS} ${ZMQ_LIB_STA})
+install(TARGETS Starter_sta 
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION bin
         ARCHIVE DESTINATION bin)
