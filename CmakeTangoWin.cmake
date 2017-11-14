@@ -3,7 +3,6 @@ set(CMP0048 NEW)
 
 # definitions and compile options
 add_definitions(-DWIN32)
-add_definitions(-D_WINDLL)
 add_definitions(-DNDEBUG)
 if(CMAKE_CL_64)
 add_definitions(-D_64BITS)
@@ -19,8 +18,8 @@ set(TANGO_INCLUDES "$ENV{TANGO_ROOT}/include")
 set(TANGO_LNK_DIR "$ENV{TANGO_ROOT}/bin;$ENV{TANGO_ROOT}/lib")
 # link files
 
-set(TANGO_DYN_LIBS "$ENV{TANGO_ROOT}/lib/libtango.lib;$ENV{TANGO_ROOT}/lib/omniORB4.lib;$ENV{TANGO_ROOT}/lib/omniDynamic4.lib;$ENV{TANGO_ROOT}/lib/COS4.lib;$ENV{TANGO_ROOT}/lib/omnithread.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
-set(TANGO_STA_LIBS "$ENV{TANGO_ROOT}/lib/tango.lib;$ENV{TANGO_ROOT}/bin/omniORB4_rt.lib;$ENV{TANGO_ROOT}/bin/omniDynamic4_rt.lib;$ENV{TANGO_ROOT}/bin/COS4_rt.lib;$ENV{TANGO_ROOT}/bin/omnithread_rt.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
+set(TANGO_STA_LIBS "$ENV{TANGO_ROOT}/lib/libtango.lib;$ENV{TANGO_ROOT}/lib/omniORB4.lib;$ENV{TANGO_ROOT}/lib/omniDynamic4.lib;$ENV{TANGO_ROOT}/lib/COS4.lib;$ENV{TANGO_ROOT}/lib/omnithread.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
+set(TANGO_DYN_LIBS "$ENV{TANGO_ROOT}/lib/tango.lib;$ENV{TANGO_ROOT}/bin/omniORB4_rt.lib;$ENV{TANGO_ROOT}/bin/omniDynamic4_rt.lib;$ENV{TANGO_ROOT}/bin/COS4_rt.lib;$ENV{TANGO_ROOT}/bin/omnithread_rt.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
 set(WIN_LIBS ws2_32 mswsock advapi32 comctl32 odbc32)
 if(MSVC90)
     set(ZMQ_LIB_STA $ENV{TANGO_ROOT}/lib/libzmq-v90-mt-s-4_0_5.lib)
