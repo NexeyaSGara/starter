@@ -85,11 +85,14 @@ install(TARGETS Starter
         LIBRARY DESTINATION bin
         ARCHIVE DESTINATION bin)
 add_executable(Starter_sta ${SERVER_SRC})
-target_link_libraries(Starter PUBLIC ${TANGO_STA_LIBS} ${WIN_LIBS} ${ZMQ_LIB_STA})
+target_link_libraries(Starter_sta PUBLIC ${TANGO_STA_LIBS} ${WIN_LIBS} ${ZMQ_LIB_STA})
 install(TARGETS Starter_sta 
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION bin
         ARCHIVE DESTINATION bin)
+        
+  set_property(TARGET Starter_sta PROPERTY COMPILE_DEFINITIONS "_WINSTATIC;")
+  set_property(TARGET Starter PROPERTY COMPILE_DEFINITIONS "LOG4TANGO_HAS_DLL;TANGO_HAS_DLL;")
 else(WIN32)
 include(${MAKE_ENV}/cmake_common_target.opt)
 endif(WIN32)
