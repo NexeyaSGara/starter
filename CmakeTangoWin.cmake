@@ -19,10 +19,7 @@ set(TANGO_INCLUDES "$ENV{TANGO_ROOT}/include")
 set(TANGO_LNK_DIR "$ENV{TANGO_ROOT}/bin;$ENV{TANGO_ROOT}/lib")
 # link files
 
-add_definitions(-DTANGO_HAS_DLL)
-add_definitions(-DLOG4TANGO_HAS_DLL)
-
-set(TANGO_DYN_LIBS "$ENV{TANGO_ROOT}/lib/libtango.lib;$ENV{TANGO_ROOT}/bin/omniORB4.lib;$ENV{TANGO_ROOT}/bin/omniDynamic4.lib;$ENV{TANGO_ROOT}/bin/COS4.lib;$ENV{TANGO_ROOT}/bin/omnithread.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
+set(TANGO_DYN_LIBS "$ENV{TANGO_ROOT}/lib/libtango.lib;$ENV{TANGO_ROOT}/lib/omniORB4.lib;$ENV{TANGO_ROOT}/lib/omniDynamic4.lib;$ENV{TANGO_ROOT}/lib/COS4.lib;$ENV{TANGO_ROOT}/lib/omnithread.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
 set(TANGO_STA_LIBS "$ENV{TANGO_ROOT}/lib/tango.lib;$ENV{TANGO_ROOT}/bin/omniORB4_rt.lib;$ENV{TANGO_ROOT}/bin/omniDynamic4_rt.lib;$ENV{TANGO_ROOT}/bin/COS4_rt.lib;$ENV{TANGO_ROOT}/bin/omnithread_rt.lib;$ENV{TANGO_ROOT}/bin/msvcstub.lib;$ENV{TANGO_ROOT}/lib/pthreadVC2.lib")                                            
 set(WIN_LIBS ws2_32 mswsock advapi32 comctl32 odbc32)
 if(MSVC90)
