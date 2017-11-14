@@ -104,22 +104,22 @@ init:
  # Tango
   - cmd: cd "C:\projects\"
   - cmd: md libtango
-  - cmd: cd "C:\projects\"
-  - if %ARCH%==win32-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/gvfkvr8966jeg9jj/artifacts/libtango_9.2.6_v90_x86.zip
-  - if %ARCH%==x64-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/wjwj6q1vdkhdes7f/artifacts/libtango_9.2.6_v90_x64.zip
-  - if %ARCH%==win32-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/q9mutp31vjd9gnpm/artifacts/libtango_9.2.6_v100_x86.zip
-  - if %ARCH%==x64-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/hf9gc2qni3bm0la5/artifacts/libtango_9.2.6_v100_x64.zip
-  - if %ARCH%==x64-msvc12 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/2h1wbxv4ixn1vew5/artifacts/libtango_9.2.6_v120_x64.zip
-  - if %ARCH%==x64-msvc14 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/jv5m8mll4v9lw7jk/artifacts/libtango_9.2.6_v140_x64.zip
+  - cmd: cd "C:\projects\" 
+  - if %ARCH%==win32-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/qayek3nfci1oc651/artifacts/libtango_9.2.6_v90_x86.zip
+  - if %ARCH%==x64-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/uy0o25h0pnsaw6dq/artifacts/libtango_9.2.6_v90_x64.zip
+  - if %ARCH%==win32-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/5o73gluno8m3r5jo/artifacts/libtango_9.2.6_v100_x86.zip
+  - if %ARCH%==x64-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/qajdl161nlu2a2o1/artifacts/libtango_9.2.6_v100_x64.zip
+  - if %ARCH%==x64-msvc12 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/h8gl56mey7cng732/artifacts/libtango_9.2.6_v120_x64.zip
+  - if %ARCH%==x64-msvc14 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/0mjnu8cx3i4u05bb/artifacts/libtango_9.2.6_v140_x64.zip
   - cmd: if %platform%==x64 7z -y x libtango_9.2.6_%MSVCVERSION%_x64.zip -oC:\projects\libtango\
   - cmd: if %platform%==win32 7z -y x libtango_9.2.6_%MSVCVERSION%_x86.zip -oC:\projects\libtango\
   #tango debug
-  - if %ARCH%==win32-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/gvfkvr8966jeg9jj/artifacts/libtango_9.2.6_v90_x86_debug.zip
-  - if %ARCH%==x64-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/wjwj6q1vdkhdes7f/artifacts/libtango_9.2.6_v90_x64_debug.zip
-  - if %ARCH%==win32-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/q9mutp31vjd9gnpm/artifacts/libtango_9.2.6_v100_x86_debug.zip
-  - if %ARCH%==x64-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/hf9gc2qni3bm0la5/artifacts/libtango_9.2.6_v100_x64_debug.zip
-  - if %ARCH%==x64-msvc12 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/2h1wbxv4ixn1vew5/artifacts/libtango_9.2.6_v120_x64_debug.zip
-  - if %ARCH%==x64-msvc14 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/jv5m8mll4v9lw7jk/artifacts/libtango_9.2.6_v140_x64_debug.zip
+  - if %ARCH%==win32-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/qayek3nfci1oc651/artifacts/libtango_9.2.6_v90_x86_debug.zip
+  - if %ARCH%==x64-msvc9 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/uy0o25h0pnsaw6dq/artifacts/libtango_9.2.6_v90_x64_debug.zip
+  - if %ARCH%==win32-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/5o73gluno8m3r5jo/artifacts/libtango_9.2.6_v100_x86_debug.zip
+  - if %ARCH%==x64-msvc10 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/qajdl161nlu2a2o1/artifacts/libtango_9.2.6_v100_x64_debug.zip
+  - if %ARCH%==x64-msvc12 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/h8gl56mey7cng732/artifacts/libtango_9.2.6_v120_x64_debug.zip
+  - if %ARCH%==x64-msvc14 appveyor DownloadFile https://ci.appveyor.com/api/buildjobs/0mjnu8cx3i4u05bb/artifacts/libtango_9.2.6_v140_x64_debug.zip
   - cmd: if %platform%==x64 7z -y x libtango_9.2.6_%MSVCVERSION%_x64_debug.zip -oC:\projects\libtango\
   - cmd: if %platform%==win32 7z -y x libtango_9.2.6_%MSVCVERSION%_x86_debug.zip -oC:\projects\libtango\
   - cmd: if %ARCH%==x64-msvc10 cd C:/projects/libtango/
