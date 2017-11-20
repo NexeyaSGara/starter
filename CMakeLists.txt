@@ -91,7 +91,7 @@ install(TARGETS Starter_sta
         LIBRARY DESTINATION bin
         ARCHIVE DESTINATION bin)
         
-  set_property(TARGET Starter_sta PROPERTY COMPILE_DEFINITIONS "_WINSTATIC;")
+  set_property(TARGET Starter_sta PROPERTY COMPILE_DEFINITIONS "_WINSTATIC;MT")
   set_property(TARGET Starter PROPERTY COMPILE_DEFINITIONS "LOG4TANGO_HAS_DLL;TANGO_HAS_DLL;")
 else(WIN32)
 include(${MAKE_ENV}/cmake_common_target.opt)
