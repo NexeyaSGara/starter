@@ -84,6 +84,7 @@ install(TARGETS Starter
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION bin
         ARCHIVE DESTINATION bin)
+add_compile_options(/MT)
 add_executable(Starter_sta ${SERVER_SRC})
 target_link_libraries(Starter_sta PUBLIC ${TANGO_STA_LIBS} ${WIN_LIBS} ${ZMQ_LIB_STA})
 install(TARGETS Starter_sta 
